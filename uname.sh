@@ -12,7 +12,7 @@ done < "$1"
 	NAME=${2}
 	if grep ${NAME} ${1} >/dev/null
 	then
-		echo "$(awk -F ':' -v name=${NAME} '$0 ~ name {print $5}' input.txt)"
+		echo "$(awk -F ':' -v name=${NAME} '$0 ~ name {print $5}' $1)"
 	else
 		exit 1
 	fi
